@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DarkNaku.GOPool
+namespace DarkNaku.Sound
 {
     public class SoundConfig : ScriptableObject {
-        [SerializeField] private List<AudioClip> _clips;
+        [SerializeField] private List<AudioClip> _clips = new();
 
         public static SoundConfig Instance {
             get {

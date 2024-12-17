@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace DarkNaku.Sound {
+    [RequireComponent(typeof(Toggle))]
     public class ToggleSound : MonoBehaviour {
         [SerializeField] private string _onClip;
         [SerializeField] private string _offClip;
@@ -13,11 +14,11 @@ namespace DarkNaku.Sound {
         private Toggle _toggle;
 
         private void OnEnable() {
-            _toggle.onValueChanged.AddListener(OnValueChanged);
+            TG.onValueChanged.AddListener(OnValueChanged);
         }
 
         private void OnDisable() {
-            _toggle.onValueChanged.RemoveListener(OnValueChanged);
+            TG.onValueChanged.RemoveListener(OnValueChanged);
         }
 
         private void OnValueChanged(bool isOn) {
